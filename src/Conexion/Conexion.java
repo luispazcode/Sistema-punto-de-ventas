@@ -9,13 +9,14 @@ import java.sql.SQLException;
  * @author porta
  */
 public class Conexion {
-
+    //Declaración de variables
     private String db = "punto_de_ventas";
     private String user = "root";
     private String password = "";
     private String urlSql = "jdbc:sqlserver://localhost:1433;databaseName=" + db + ";integratedSecurity=true;";
     private Connection conn = null;
-
+    
+    //Metodo Conexion
     public Conexion() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
