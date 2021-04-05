@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * @author porta
  */
 public class Conexion {
-    //Declaración de nuevas  variables EROS ETERNO MARICON SIN PINGA
+    //Declaración de variables
     private String db = "punto_de_ventas";
     private String user = "root";
     private String password = "";
