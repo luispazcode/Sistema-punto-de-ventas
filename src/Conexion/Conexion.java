@@ -28,7 +28,7 @@ public class Conexion {
             System.out.println("Error : " + ex);
         }
     }
-
+    //Constructor conecction
     public Connection getConn() {
         return conn;
     }
