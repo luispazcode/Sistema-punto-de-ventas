@@ -9,7 +9,7 @@ import java.sql.SQLException;
  * @author porta
  */
 public class Conexion {
-    //Declaración de nuevas_variables
+    //Declaración de nuevas  variables
     private String db = "punto_de_ventas";
     private String user = "root";
     private String password = "";
