@@ -553,15 +553,6 @@ public class Sistema extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -571,6 +562,8 @@ public class Sistema extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -603,7 +596,6 @@ public class Sistema extends javax.swing.JFrame {
 
         BtnCliente_Cancelar.setBackground(new java.awt.Color(153, 153, 153));
         BtnCliente_Cancelar.setForeground(new java.awt.Color(51, 51, 51));
-        BtnCliente_Cancelar.setIcon(new javax.swing.ImageIcon("E:\\ARCHIVOS UNIVERSIDAD\\CICLO 2020-II\\ANALISIS Y DISEÑO DE SISTEMAS II\\Proyecto_Final_Sistema\\iconos\\cancelar.png")); // NOI18N
         BtnCliente_Cancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnCliente_Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -613,7 +605,6 @@ public class Sistema extends javax.swing.JFrame {
 
         BtnCliente_Agregar.setBackground(new java.awt.Color(153, 153, 153));
         BtnCliente_Agregar.setForeground(new java.awt.Color(51, 51, 51));
-        BtnCliente_Agregar.setIcon(new javax.swing.ImageIcon("E:\\ARCHIVOS UNIVERSIDAD\\CICLO 2020-II\\ANALISIS Y DISEÑO DE SISTEMAS II\\Proyecto_Final_Sistema\\iconos\\mas.png")); // NOI18N
         BtnCliente_Agregar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BtnCliente_Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
