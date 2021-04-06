@@ -20,7 +20,7 @@ import org.apache.commons.dbutils.handlers.ColumnListHandler;
  */
 public class ClientesVM extends Consult {
 
-    private String _accion = "insert";
+    private String _accion = "insert", _mony;
     private final ArrayList<JLabel> _label;
     private final ArrayList<JTextField> _textField;
     private final JCheckBox _checkBoxCredito;
@@ -31,6 +31,7 @@ public class ClientesVM extends Consult {
     private int _reg_por_pagina = 10;
     private int _num_pagina = 1;
     public int seccion;
+    private final FormatDecimal _format;
     private Paginador<TClientes> _paginadorClientes;
     private Paginador<TReportes_clientes> _paginadorReportes;
 
@@ -41,6 +42,7 @@ public class ClientesVM extends Consult {
         _tableCliente = (JTable) objects[1];
         _spinnerPaginas = (JSpinner) objects[2];
         _tableReporte = (JTable) objects[3];
+        _format = new FormatDecimal();
         restablecer();
         RestablecerReport();
 
@@ -338,6 +340,20 @@ public class ClientesVM extends Consult {
         _tableReporte.getColumnModel().getColumn(0).setMaxWidth(0);
         _tableReporte.getColumnModel().getColumn(0).setMinWidth(0);
         _tableReporte.getColumnModel().getColumn(0).setPreferredWidth(0);
+    }
+//METODO REPORTE CLIENTE
+
+    public void GetReportCliente() {
+        int filas = _tableReporte.getSelectedRow();
+        _idCliente = (Integer) modelo2.getValueAt(filas, 0);
+        String nombre = (String) modelo2.getValueAt(filas, 2);
+        String apellido = (String) modelo2.getValueAt(filas, 3);
+        _label.get(8).setText(nombre + " " + apellido);
+        _label.get(9).setText(_mony + _format.decimal((Double) modelo2.getValueAt(filas, 4)));
+        _label.get(10).setText((String) modelo2.getValueAt(filas, 5));
+        _label.get(11).setText(_mony + _format.decimal((Double) modelo2.getValueAt(filas, 6)));
+        _label.get(12).setText((String) modelo2.getValueAt(filas, 7));
+        _label.get(13).setText((String) modelo2.getValueAt(filas, 8));
     }
 
     public final void RestablecerReport() {

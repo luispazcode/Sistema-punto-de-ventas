@@ -917,6 +917,13 @@ public class Sistema extends javax.swing.JFrame {
         label.add(LabelImage_Cliente);
         label.add(LabelCliente_Paginas);
 
+        label.add(LabelReport_Nombre);
+        label.add(LabelCliente_Deuda);
+        label.add(LabelCliente_FechaDeuda);
+        label.add(LabelCliente_Pago);
+        label.add(LabelCliente_FechaPago);
+        label.add(LabelCliente_Ticket);
+        label.add(LabelReport_Pagos);
         ArrayList<JTextField> textField = new ArrayList();
         textField.add(TxtCliente_Dni);
         textField.add(TxtCliente_Nombre);
@@ -1093,11 +1100,18 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_TabbedPaneCliente2StateChanged
 
     private void TableCliente_ReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableCliente_ReportMouseClicked
-        // TODO add your handling code here:
+        //CONDICION PARA VERIFICAR SI LA TABLA TIENE REGISTRO
+        if (TableCliente_Report.getSelectedRows().length > 0){
+           
+            cliente.GetReportCliente();
+           
+        }
     }//GEN-LAST:event_TableCliente_ReportMouseClicked
 
     private void TableCliente_ReportKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TableCliente_ReportKeyReleased
-        // TODO add your handling code here:
+        if (TableCliente_Report.getSelectedRows().length > 0){
+            cliente.GetReportCliente();
+        }
     }//GEN-LAST:event_TableCliente_ReportKeyReleased
 
     // </editor-fold>
