@@ -29,7 +29,7 @@ public class Consult extends Conexion {
         }
         return cliente;
     }
-
+    // Metodo reporte clientes
     public List<TReportes_clientes> reportesClientes() {
         String where = "";
         List<TReportes_clientes> reportes = new ArrayList();

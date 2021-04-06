@@ -294,13 +294,39 @@ public class ClientesVM extends Consult {
         SearchClientes("");
     }
 // </editor-fold>
-    
+
 // <editor-fold defaultstate="collapsed" desc="CODIGO DE PAGOS Y REPORTES">
-    public void SearchReportes(String valor){
+    public void SearchReportes(String valor) {
         String[] titulos = {"ID", "Nombre", "Apellido", "Deuda actual", "Fecha deuda", "Ultimo pago", "Fecha pago", "Ticket", "Fecha limite"};
-        modelo2 = new DefaultTableModel(null,titulos);
-        int inicio = (_num_pagina -1) * _reg_por_pagina;
+        modelo2 = new DefaultTableModel(null, titulos);
+        int inicio = (_num_pagina - 1) * _reg_por_pagina;
         List<TReportes_clientes> reporteFilter;
+        //Avance de hoy INICIO (Video 36)
+        if (valor.equals("")) {
+            reporteFilter = reportesClientes().stream().skip(inicio).limit(_reg_por_pagina).collect(Collectors.toList());
+        } else {
+            reporteFilter = reportesClientes().stream().filter(C -> C.getNid().startsWith(valor) || C.getNombre().startsWith(valor) || C.getApellido()
+                            .startsWith(valor)).skip(inicio)
+                            .limit(_reg_por_pagina).collect(Collectors.toList());
+        }
+        if(!reporteFilter.isEmpty()){
+            reporteFilter.forEach(item ->{
+                Object[] registros = {
+                  item.getIdReporte(),
+                  item.getNid(),
+                  item.getNombre(),
+                  item.getApellido(),
+                  item.getDeudaActual(),
+                  item.getFechaDeuda(),
+                  item.getUltimoPago(),
+                  item.getFechaPago(),
+                  item.getTicket(),
+                  item.getFechaLimite(),
+                };
+            });
+                
+            
+        }
     }
 //</editor-fold>
     private List<TClientes> listClientes;
