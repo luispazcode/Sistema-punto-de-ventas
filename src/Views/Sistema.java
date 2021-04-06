@@ -8,10 +8,7 @@ package Views;
 import Library.Objects;
 import ViewModels.ClientesVM;
 import java.awt.Color;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -937,9 +934,12 @@ public class Sistema extends javax.swing.JFrame {
         textField.add(TxtCliente_Telefono);
         textField.add(TxtCliente_Direccion);
 
-        Object[] objects = {CheckBoxCliente_Credito,
+        Object[] objects = {
+            CheckBoxCliente_Credito,
             Table_Clientes,
-            SpinnerPaginas_Clientes};
+            SpinnerPaginas_Clientes,
+            TableCliente_Report
+        };
         cliente = new ClientesVM(objects, label, textField);
         TabbedPanePrincipal.setSelectedIndex(1);
     }//GEN-LAST:event_BtnClientesActionPerformed
@@ -1068,23 +1068,37 @@ public class Sistema extends javax.swing.JFrame {
     }//GEN-LAST:event_Table_ClientesMouseClicked
 
     private void TabbedPaneCliente1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente1StateChanged
-        if (TabbedPaneCliente1.getSelectedIndex() == 0) {
-            if (TabbedPaneCliente2.getSelectedIndex() > 0) {
-                TabbedPaneCliente2.setSelectedIndex(0);
-            }
-        } else {
-            TabbedPaneCliente2.setSelectedIndex(1);
+        switch(TabbedPaneCliente1.getSelectedIndex()){
+            case 0:
+                if(TabbedPaneCliente2.getSelectedIndex()>0){
+                    TabbedPaneCliente2.setSelectedIndex(0);
+                    cliente.seccion = 1;
+                    cliente.Registro_Paginas();
+                }
+                break;
+            case 1:
+                cliente.seccion = 1;
+                TabbedPaneCliente2.setSelectedIndex(1);
+                cliente.Registro_Paginas();
+                break;
         }
     }//GEN-LAST:event_TabbedPaneCliente1StateChanged
 
     private void TabbedPaneCliente2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TabbedPaneCliente2StateChanged
-//        if (TabbedPaneCliente2.getSelectedIndex() == 0) {
-//            if (TabbedPaneCliente1.getSelectedIndex() > 0) {
-//                TabbedPaneCliente1.setSelectedIndex(0);
-//            } else {
-//                TabbedPaneCliente1.setSelectedIndex(1);
-//            }
-//        }
+            switch(TabbedPaneCliente2.getSelectedIndex()){
+            case 0:
+                if(TabbedPaneCliente1.getSelectedIndex()>0){
+                    TabbedPaneCliente1.setSelectedIndex(0);
+                    cliente.seccion = 1;
+                    cliente.Registro_Paginas();
+                }
+                break;
+            case 1:
+                cliente.seccion = 1;
+                TabbedPaneCliente1.setSelectedIndex(1);
+                cliente.Registro_Paginas();
+                break;
+        }
     }//GEN-LAST:event_TabbedPaneCliente2StateChanged
 
     private void TableCliente_ReportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableCliente_ReportMouseClicked
